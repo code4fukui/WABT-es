@@ -151,6 +151,10 @@ update-wasm2c-fac:
 .PHONY: demo
 demo: emscripten-release
 	cp out/emscripten/Release/libwabt.js docs/demo
+es: #demo
+	echo "let f, v;" > ./WABT.js
+	cat docs/demo/libwabt.js >> ./WABT.js
+	echo "export const WABT = WabtModule;" >> ./WABT.js
 
 # running CMake
 $(foreach CONFIG,$(CONFIGS), \

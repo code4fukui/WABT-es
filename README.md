@@ -1,8 +1,32 @@
 [![Github CI Status](https://github.com/WebAssembly/wabt/workflows/CI/badge.svg)](https://github.com/WebAssembly/wabt)
 
-# WABT: The WebAssembly Binary Toolkit
+# WABT-es: The WebAssembly Binary Toolkit as an ESmodule
 
 WABT (we pronounce it "wabbit") is a suite of tools for WebAssembly, including:
+
+```JavaScript
+import { WABT } from "https://code4fukui.github.io/WABT-es/WABT.js";
+
+const src = `(module
+  (func (export "addTwo") (param i32 i32) (result i32)
+    local.get 0
+    local.get 1
+    i32.add))
+`;
+const wabt = await WABT();
+const module = wabt.parseWat("test.wast", src);
+const mbin = module.toBinary({ log: true });
+console.log(mbin.log);
+const wasm = new WebAssembly.Module(mbin.buffer);
+const instance = new WebAssembly.Instance(wasm, {});
+const { addTwo } = instance.exports;
+console.log(addTwo(10, 5));
+```
+
+to make WABT.js from docs/demo/libwabt.js
+```sh
+$ make es
+```
 
  - [**wat2wasm**](https://webassembly.github.io/wabt/doc/wat2wasm.1.html): translate from [WebAssembly text format](https://webassembly.github.io/spec/core/text/index.html) to the [WebAssembly binary format](https://webassembly.github.io/spec/core/binary/index.html)
  - [**wasm2wat**](https://webassembly.github.io/wabt/doc/wasm2wat.1.html): the inverse of wat2wasm, translate from the binary format back to the text format (also known as a .wat)
