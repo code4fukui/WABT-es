@@ -10,6 +10,7 @@ const wabt = await WABT();
 const module = wabt.parseWat("test.wast", src);
 const mbin = module.toBinary({ log: true });
 console.log(mbin.log);
+await Deno.writeFile("addTwo.wasm", mbin.buffer);
 const wasm = new WebAssembly.Module(mbin.buffer);
 const instance = new WebAssembly.Instance(wasm, {});
 const { addTwo } = instance.exports;
