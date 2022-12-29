@@ -38,10 +38,11 @@ textarea {
 </style>
 
 <script type="module">
-import { WABT } from "./WABT.js";
+import { WABT } from "https://code4fukui.github.io/WABT-es/WABT.js";
 
-btnrun.onclick = async () => {
-  const wabt = await WABT();
+const wabt = await WABT();
+
+btnrun.onclick = () => {
   const src = tasrc.value;
   const module = wabt.parseWat("test.wast", src);
   const mbin = module.toBinary({ log: true });
@@ -51,5 +52,4 @@ btnrun.onclick = async () => {
   const { main } = instance.exports;
   inres.value = main();
 };
-
 </script>
