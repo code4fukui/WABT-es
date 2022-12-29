@@ -1,4 +1,4 @@
-import { WABT } from "./WABT.js";
+import { WABT } from "https://code4fukui.github.io/WABT-es/WABT.js";
 
 const src = `(module
   (func (export "addTwo") (param i32 i32) (result i32)
