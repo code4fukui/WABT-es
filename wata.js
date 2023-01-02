@@ -2,7 +2,7 @@ import { WABT } from "https://code4fukui.github.io/WABT-es/WABT.js";
 
 const fn = Deno.args[0];
 if (!fn) {
-  console.log("deno run -A watc.js [*.wat]");
+  console.log("deno run -A wata.js [*.wat]");
   Deno.exit(1);
 }
 const src = await Deno.readTextFile(fn);
