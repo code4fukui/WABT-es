@@ -39,6 +39,7 @@ textarea {
 
 <script type="module">
 import { WABT } from "https://code4fukui.github.io/WABT-es/WABT.js";
+import { setFileDropHandler } from "https://js.sabae.cc/setFileDropHandler.js";
 
 const wabt = await WABT();
 
@@ -52,4 +53,11 @@ btnrun.onclick = () => {
   const { main } = instance.exports;
   inres.value = main();
 };
+
+setFileDropHandler(document.body, (buf) => {
+  const bin = new Uint8Array(buf);
+  const mod = wabt.readWasm(bin, { readDebugName: true });
+  const src = mod.toText({});
+  tasrc.value = src;
+});
 </script>
