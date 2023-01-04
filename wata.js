@@ -32,6 +32,6 @@ if (opts.run) {
     }
   });
   if (instance.exports.main) {
-    console.log(instance.exports.main);
+    console.log(instance.exports.main());
   }
 }
