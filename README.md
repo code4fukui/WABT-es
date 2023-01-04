@@ -4,7 +4,7 @@
 
 WABT (we pronounce it "wabbit") is a suite of tools for WebAssembly, including:
 
-- [DEMO: WebAssembly playground](https://github.com/code4fukui/WABT-es/blob/main/index.html)
+- [DEMO: WebAssembly playground](https://code4fukui.github.io/WABT-es/)
 
 ```JavaScript
 import { WABT } from "https://code4fukui.github.io/WABT-es/WABT.js";
