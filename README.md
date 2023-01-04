@@ -30,14 +30,30 @@ to make WABT.js from docs/demo/libwabt.js
 $ make es
 ```
 
-WAT assembler
+## WAT assembler
+
 ```sh
 $ deno run -A https://code4fukui.github.io/WABT-es/wata.js wata.test.wat
 ```
-WAT disassembler
+
+to install
+```sh
+$ deno install -A https://code4fukui.github.io/WABT-es/wata.js
+$ wata
+```
+
+## WAT disassembler
 ```sh
 $ deno run -A https://code4fukui.github.io/WABT-es/watda.js wata.test.wasm
 ```
+
+to install
+```sh
+$ deno install -A https://code4fukui.github.io/WABT-es/watda.js
+$ watda
+```
+
+## reference
 
  - [**wat2wasm**](https://webassembly.github.io/wabt/doc/wat2wasm.1.html): translate from [WebAssembly text format](https://webassembly.github.io/spec/core/text/index.html) to the [WebAssembly binary format](https://webassembly.github.io/spec/core/binary/index.html)
  - [**wasm2wat**](https://webassembly.github.io/wabt/doc/wasm2wat.1.html): the inverse of wat2wasm, translate from the binary format back to the text format (also known as a .wat)
