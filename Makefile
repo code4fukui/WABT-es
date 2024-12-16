@@ -153,6 +153,7 @@ demo: emscripten-release
 	cp out/emscripten/Release/libwabt.js docs/demo
 es: #demo
 	echo "let f, v;" > ./WABT.js
+	echo "const __dirname = \"\";" > ./WABT.js
 	cat docs/demo/libwabt.js >> ./WABT.js
 	echo "export const WABT = WabtModule;" >> ./WABT.js
 
