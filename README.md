@@ -1,5 +1,7 @@
 # WABT-es: The WebAssembly Binary Toolkit as an ESmodule
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 WABT (we pronounce it "wabbit") is a suite of tools for WebAssembly, including:
 
 - [DEMO: WebAssembly playground](https://code4fukui.github.io/WABT-es/)
@@ -51,7 +53,7 @@ $ deno install -A https://code4fukui.github.io/WABT-es/watda.js
 $ watda
 ```
 
-## reference
+## Reference
 
  - [**wat2wasm**](https://webassembly.github.io/wabt/doc/wat2wasm.1.html): translate from [WebAssembly text format](https://webassembly.github.io/spec/core/text/index.html) to the [WebAssembly binary format](https://webassembly.github.io/spec/core/binary/index.html)
  - [**wasm2wat**](https://webassembly.github.io/wabt/doc/wasm2wat.1.html): the inverse of wat2wasm, translate from the binary format back to the text format (also known as a .wat)
@@ -85,15 +87,6 @@ Wabt has been compiled to JavaScript via emscripten. Some of the functionality i
 
 ## Supported Proposals
 
-* Proposal: Name and link to the WebAssembly proposal repo
-* flag: Flag to pass to the tool to enable/disable support for the feature
-* default: Whether the feature is enabled by default
-* binary: Whether wabt can read/write the binary format
-* text: Whether wabt can read/write the text format
-* validate: Whether wabt can validate the syntax
-* interpret: Whether wabt can execute these operations in `wasm-interp` or `spectest-interp`
-* wasm2c: Whether wasm2c supports these operations
-
 | Proposal   | flag | default | binary | text | validate | interpret | wasm2c |
 | --------------------- | --------------------------- | - | - | - | - | - | - |
 | [exception handling][]| `--enable-exceptions`       |   | ✓ | ✓ | ✓ | ✓ | ✓ |
@@ -105,3 +98,17 @@ Wabt has been compiled to JavaScript via emscripten. Some of the functionality i
 | [multi-value][]       | `--disable-multi-value`     | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | [tail-call][]         | `--enable-tail-call`        |   | ✓ | ✓ | ✓ | ✓ |   |
 | [bulk memory][]       |
+
+[exception handling]: https://github.com/WebAssembly/exception-handling
+[mutable globals]: https://github.com/WebAssembly/mutable-global
+[nontrapping float-to-int conversions]: https://github.com/WebAssembly/nontrapping-float-to-int-conversions
+[sign extension]: https://github.com/WebAssembly/sign-extension-ops
+[simd]: https://github.com/WebAssembly/simd
+[threads]: https://github.com/WebAssembly/threads
+[multi-value]: https://github.com/WebAssembly/multi-value
+[tail-call]: https://github.com/WebAssembly/tail-call
+[bulk memory]: https://github.com/WebAssembly/bulk-memory-operations
+
+## License
+
+[Apache License 2.0](https://github.com/code4fukui/WABT-es/blob/main/LICENSE)

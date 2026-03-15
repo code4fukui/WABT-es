@@ -1,6 +1,6 @@
 # WABT-es: WebAssemblyバイナリツールキットのESモジュール版
 
-1〜2文で説明。WebAssembly関連のツールをESモジュールで利用できるライブラリ。
+WABT-es は、WebAssemblyに関連するツール群をESモジュールとして利用できるライブラリです。WABT (WebAssemblyバイナリツールキット)のようなWebAssembly関連ツールをブラウザ上で使用することができます。
 
 ## デモ
 [WebAssemblyプレイグラウンド](https://code4fukui.github.io/WABT-es/)
